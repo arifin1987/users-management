@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { SomeContext } from "../../components/AboutFather/AboutFather";
+
 const About = () => {
+  const theme = useContext(SomeContext);
+  console.log(theme);
   return (
     <div>
-      <h1>About page</h1>
+      <h1>{theme}</h1>
     </div>
   );
 };

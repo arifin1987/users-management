@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const UserDetails = () => {
-  const users = useParams();
-  console.log(users);
+  const { userId } = useParams();
+
   const [user, setUser] = useState({});
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${users.id}`)
+    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, []);

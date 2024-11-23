@@ -3,7 +3,7 @@ import Post from "./Post";
 
 const Posts = () => {
   const posts = useLoaderData();
-  console.log(posts);
+
   return (
     <div>
       <h1>Posts: {posts.length}</h1>
