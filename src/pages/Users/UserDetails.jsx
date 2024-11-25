@@ -1,19 +1,18 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 const UserDetails = () => {
   const { userId } = useParams();
 
-  const [user, setUser] = useState({});
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
-      .then((res) => res.json())
-      .then((data) => setUser(data));
-  }, []);
+  console.log(userId);
+  const users = useLoaderData();
+  console.log(users);
+  const singleUser = users.find((user) => user.id == userId);
+  console.log(singleUser);
+
   return (
-    <div className="border-2 border-gray-800 rounded-md w-1/2 p-4 text-center">
-      <h1>{user.name}</h1>
-      <p>{user.email}</p>
+    <div className="border-2 border-gray-800 rounded-md w-1/2 p-4 text-center mx-auto m-4 bg-blue-600 text-white">
+      <h1>Name:{singleUser.name}</h1>
+      <p> Email:{singleUser.email}</p>
     </div>
   );
 };

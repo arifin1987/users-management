@@ -28,8 +28,9 @@ export const router = createBrowserRouter([
         element: <Users></Users>,
       },
       {
+        // If back end route not available. Not recomended
         path: "/users/:userId",
-
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
         element: <UserDetails></UserDetails>,
       },
       {
