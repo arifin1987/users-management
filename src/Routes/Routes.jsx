@@ -7,6 +7,7 @@ import UserDetails from "../pages/Users/UserDetails";
 import Posts from "../pages/Posts/Posts";
 import PostDetails from "../pages/Posts/PostDetails";
 import RegistrationForm from "../pages/RegistrationForm/RegistrationForm";
+import PriceOptions from "../pages/PriceOptions/PriceOptions";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegistrationForm />,
+      },
+      {
+        path: "/priceOptions",
+        element: <PriceOptions />,
       },
     ],
   },
